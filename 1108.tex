@@ -1,0 +1,186 @@
+% 1108.tex
+% 研究型文章学习笔记模板
+% 建议使用 XeLaTeX 编译（支持中文）
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{datetime}
+
+% 字体（可按需修改）
+\setmainfont{TeX Gyre Termes}
+\setCJKmainfont{SimSun} % Windows 常见中文字体，视系统调整
+
+% 页眉页脚
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small 研究笔记}
+\rhead{\small \PaperMeta}
+\cfoot{\small \thepage}
+
+% 元数据命令（在文档开始处填写）
+\newcommand{\PaperMeta}{}
+\newcommand{\PaperTitle}{}
+\newcommand{\PaperAuthors}{}
+\newcommand{\PaperVenue}{}
+\newcommand{\PaperYear}{}
+\newcommand{\PaperLink}{}
+
+% 强调框
+\newtcolorbox{highlight}{colback=yellow!10,colframe=yellow!60!black,boxrule=0.5pt}
+
+\begin{document}
+
+% ————— 填写元数据 —————
+\renewcommand{\PaperTitle}{Observation and Modulation of the Quantum Mpemba Effect on a Superconducting Quantum Processor}
+\renewcommand{\PaperAuthors}{Yueshan Xu, Cai-Ping Fang, Bing-Jie Chen, Ming-Chuan Wang}
+\renewcommand{\PaperVenue}{ArXiv}
+\renewcommand{\PaperYear}{2025}
+\renewcommand{\PaperLink}{http://arxiv.org/abs/2508.07707}
+\renewcommand{\PaperMeta}{\PaperTitle\ --- \PaperYear}
+
+\begin{center}
+    {\LARGE \textbf{\PaperTitle}}\\[6pt]
+    {\small \PaperAuthors \quad | \quad \PaperVenue \quad | \quad \PaperYear}\\
+    {\small \url{\PaperLink}}
+\end{center}
+
+\tableofcontents
+\vspace{6pt}
+\hrule
+\vspace{10pt}
+
+% ————— 快速摘要 —————
+\section*{快速摘要（TL;DR）}
+\begin{enumerate}[leftmargin=*]
+    \item 3--5 行总结核心思想、主要贡献、适用场景与效果。
+    \item 一句话亮点：例如“提出了一个轻量级的...，在 X 数据集上将误差降低了 Y\%”。
+\end{enumerate}
+
+\section{背景介绍}
+\begin{enumerate}[leftmargin=*]
+    \item In non-equilibrium quantum many-body systems, the quantum Mpemba effect (QME) emerges as a counterintuitive phenomenon: systems exhibiting greater initial symmetry breaking restore symmetry faster than those with less.
+    \item \textbf{Three major research fields}
+        \begin{itemize}
+        \item The Mpemba effect, originally observed as faster freezing of hotter water than colder water under identical conditions, represents a counterintuitive non-equilibrium phenomenon with debated mechanisms.
+        \item In open quantum systems interacting with an external environment through Markovian and non-Markovian processes. It is dominated by classical fluctuations, resembling the classical Mpemba effect
+        \item In isolated quantum systems governed by intrinsic quantum dynamics. It is driven by intrinsic quantum fluctuations. \textbf{In isolated quantum systems, the quantum Mpemba effect (QME) manifests as a remarkable phenomenon: subsystems with greater initial symmetry breaking restore symmetry faster under a symmetry-preserving Hamiltonian.} The type of system under the study:
+        \begin{itemize}
+            \item Quasiparticle framework for integrable systems that include 1D or 2D models.
+            \item In chaotic systems using random and dualunitary circuits.
+            \item Non-ergodic contexts, such as many-body localized (MBL) systems
+            \end{itemize}
+        \end{itemize}
+    \item 伪代码/核心算法要点
+\end{enumerate}
+
+
+\section{实验方案}
+\begin{enumerate}
+    \item Here, we report the observation and control of QME using a superconducting processor featuring a unique fully connected, tunable-coupling architecture that enables precise modulation from short- to long-range interactions.
+    \item 调控参量
+        \begin{enumerate}
+            \item interaction range
+            \item potential engineering 
+            \item initial state selection
+        \begin{enumerate}
+    \item 方法类别（模型/算法/理论证明/系统实现）
+    \item 主要结果/指标
+    \item 可复现性：代码/数据/预训练模型（有/无/部分）
+\end{enumerate}
+
+
+\section{结论}
+\begin{enumerate}
+    \item In strong \textbf{short-range} coupling regimes, EA crossovers during quenches from \textbf{tilted Néel states} confirm the presence of QME.
+    \item In \textbf{intermediate coupling regimes}, \textcolor{red}{synchronized EA and entanglement entropy} dynamics reveal the \textbf{suppression} of QME.
+    \item QME reemerges with the introduction of \textcolor{red}{on-site linear potentials or quenches from tilted ferromagnetic states}, the latter proving robust against on-site disorder.
+\end{enumerate}
+
+
+\section{关键公式与推导}
+Entanglement asymmetry (EA), defined as the relative entropy
+\begin{equation}
+\Delta S_A(t)=S\left(\rho_{A, Q}(t)\right)-S\left(\rho_A(t)\right)
+\end{equation}
+where $\rho_A$ is the reduced density matrix of subsystem $A$, $\rho_{A, Q}=\sum_q \Pi_q \rho_A \Pi_q$ denotes its projection onto the \textcolor{red}{conserved charge $Q_A$ eigenspaces}, and $S\left(\rho_A\right)$ is the von Neumann entropy of $\rho_A$. 
+
+$\Delta S_A(t)$ captures the distance of $\rho_A$ from a \textcolor{red}{symmetric state $\rho_A,Q$} including contributions from non-local correlations within subsystem A that violate the symmetry.
+
+This makes it a natural \textcolor{blue}{order parameter} for non-equilibrium dynamics, offering a fresh perspective on thermalization compared to traditional metrics like entanglement entropy.
+
+
+% ————— 实验设置 —————
+\section{实验与结果}
+\begin{enumerate}
+    \item 数据集、评价指标、基线方法
+    \item 主要实验表格或图（可插入图片）
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.6\textwidth]{figs/result.png}
+    \caption{示例：结果对比图（替换为真实图片）}
+\end{figure}
+
+% ————— 优缺点与评价 —————
+\section{优点与局限}
+\begin{enumerate}
+    \item 优点：列出 3-5 点
+    \item 局限：理论/实践/资源/泛化等问题
+    \item 可信度评估：是否做了消融、显著性检验、多个 seed 等
+\end{enumerate}
+
+% ————— 思路与扩展 —————
+\section{灵感与后续方向}
+\begin{enumerate}
+    \item 可借鉴的技巧与工具
+    \item 可尝试的改进点
+    \item 与自己研究的结合点（短期/中期）
+\end{enumerate}
+
+% ————— 实现笔记 —————
+\section{实现/复现笔记}
+\begin{enumerate}
+    \item 关键超参表
+    \item 训练资源与耗时
+    \item 遇到的问题与解决方案（环境、数据预处理、模型不收敛等）
+\end{enumerate}
+
+% ————— 复现检查表 —————
+\section{复现检查表}
+\begin{enumerate}
+    \item [\(\square\)] 数据集下载与预处理
+    \item [\(\square\)] 代码实现（模型/训练/评估）
+    \item [\(\square\)] 与论文结果对齐
+    \item [\(\square\)] 随机种子与多次实验
+\end{enumerate}
+
+% ————— 重要引用 —————
+\section{参考与延伸阅读}
+% 使用 BibTeX 时在同目录下放 refs.bib 并取消注释下面两行
+% \bibliographystyle{apalike}
+% \bibliography{refs}
+列出文章引用或推荐的延伸阅读（手动列出或使用 BibTeX）。
+
+% ————— 个人笔记与 TODO —————
+\section{个人笔记 / TODO}
+\begin{enumerate}
+    \item 待实现模块：
+    \item 待阅读参考文献：
+    \item 需要讨论的问题：
+\end{enumerate}
+
+\vfill
+{\small 记录时间：\today\ \currenttime}
+
+\end{document}
