@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1}背景介绍}{1}{section.1}%
+\contentsline {section}{\numberline {2}实验方案}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}哈密顿量}{2}{subsection.2.1}%
+\contentsline {section}{\numberline {3}实验装置与耦合调控}{3}{section.3}%
+\contentsline {section}{\numberline {4}结论}{4}{section.4}%
+\contentsline {section}{\numberline {5}关键公式与推导}{4}{section.5}%
+\contentsline {section}{\numberline {6}实验与结果}{4}{section.6}%
+\contentsline {subsection}{\numberline {6.1}短程相互作用区间的纠缠不对称性测量与QME观测}{4}{subsection.6.1}%
+\contentsline {section}{\numberline {7}优点与局限}{5}{section.7}%
+\contentsline {section}{\numberline {8}灵感与后续方向}{5}{section.8}%
+\contentsline {section}{\numberline {9}实现/复现笔记}{6}{section.9}%
+\contentsline {section}{\numberline {10}复现检查表}{6}{section.10}%
+\contentsline {section}{\numberline {11}参考与延伸阅读}{6}{section.11}%
+\contentsline {section}{\numberline {12}个人笔记 }{6}{section.12}%
