@@ -166,6 +166,13 @@ H &= \sum_{i, j=i+1} g_N (\sigma^{+}_{i} \sigma^{-}_{j} + \sigma^{-}_{i} \sigma^
     \end{itemize}
 \end{itemize}
 
+\textcolor{blue}{三种在位势：}
+\begin{itemize}
+    \item 无在位势：$h_i = 0$，所有量子比特调谐到相同的频率，所有量子比特"共振"，能量均匀分布。\textcolor{red}{共振 ($h_i=0$)：完美能量匹配 $->$ 高效的能量传递 $->$ 快速热化}
+    \item 线性在位势：$h_i = \omega_{\text{ref}}/2\pi$，施加位置依赖的线性梯度场。\textcolor{red}{线性 ($h_i$ 线性变化)：系统性失配 → 抑制热化，诱导局域化}
+    \item 非线性在位势：$h_i = \omega_{\text{ref}}/2\pi \cos(2\pi i t)$，每个量子比特施加随机的在位势。\textcolor{red}{非线性 ($h_i$ 随机变化)：随机失配 $->$ 破坏相干性，减缓弛豫}
+\end{itemize}
+
 
 \section{结论}
 \begin{enumerate}
@@ -188,10 +195,10 @@ This makes it a natural \textcolor{blue}{order parameter} for non-equilibrium dy
 
 
 % ————— 实验设置 —————
-\section{实验与结果}
+% \section{实验与结果}
 
 % ————— 图2：EA测量实验协议及强短程耦合区间的EA动力学 —————
-\subsection{短程相互作用区间的纠缠不对称性测量与QME观测}
+\section{短程相互作用区间的纠缠不对称性测量与QME观测}
 
 \begin{figure}[H]
     \centering
@@ -205,9 +212,131 @@ This makes it a natural \textcolor{blue}{order parameter} for non-equilibrium dy
     \label{fig:EA_measurement_strong_coupling}
 \end{figure}
 
+\textcolor{blue}{关于$\rho_A$和$\rho_{A, Q}$的深入理解：}
+\begin{enumerate}
+    \item \textcolor{blue}{约化密度矩阵 $\rho_A$}
+    \begin{itemize}
+        \item \textcolor{blue}{定义：} $\rho_A$ 是子系统 $A = \{Q_1, Q_2, Q_3\}$ 的约化密度矩阵，通过对总系统（14个量子比特）的密度矩阵 $\rho_{\text{total}}$ 对补集 $\bar{A} = \{Q_4, Q_5, \dots, Q_{14}\}$ 取部分迹得到：
+        \begin{equation}
+        \rho_A = \operatorname{Tr}_{\bar{A}} (\rho_{\text{total}})
+        \end{equation}
+        
+        \item \textcolor{blue}{数学表示：} 在计算基下，$\rho_A$ 是一个 $8 \times 8$ 的厄米矩阵，满足：
+        \begin{itemize}
+            \item 半正定性：$\rho_A \succeq 0$
+            \item 迹为1：$\operatorname{Tr}(\rho_A) = 1$
+            \item 矩阵元 $\rho_{ij} = \langle i | \rho_A | j \rangle$，其中 $i,j \in \{000,001,\dots,111\}$
+        \end{itemize}
+        
+        \item \textcolor{blue}{物理意义：} $\rho_A$ 完整描述了子系统 $A$ 的量子态，包含：
+        \begin{itemize}
+            \item 对角元：各个计算基态的概率分布
+            \item 非对角元：不同基态间的量子相干性
+        \end{itemize}
+    \end{itemize}
+    
+    \item \textcolor{blue}{投影密度矩阵 $\rho_{A,Q}$}
+    \begin{itemize}
+        \item \textcolor{blue}{定义：} $\rho_{A,Q}$ 是 $\rho_A$ 在守恒荷 $Q_A = \sum_{i\in A} \sigma_z^i$ 的本征空间上的投影：
+        \begin{equation}
+        \rho_{A,Q} = \sum_{q} \Pi_q \rho_A \Pi_q
+        \end{equation}
+        其中 $\Pi_q$ 是投影到本征值 $q$ 对应子空间的投影算符。
+        
+        \item \textcolor{blue}{本征值分组：} 对于3量子比特系统，$Q_A$ 的本征值为激发数（$|1\rangle$ 的个数）：
+        \begin{align*}
+        q = 0 &: \{|000\rangle\} \quad \text{(1维)} \\
+        q = 1 &: \{|001\rangle, |010\rangle, |100\rangle\} \quad \text{(3维)} \\
+        q = 2 &: \{|011\rangle, |101\rangle, |110\rangle\} \quad \text{(3维)} \\
+        q = 3 &: \{|111\rangle\} \quad \text{(1维)}
+        \end{align*}
+        
+        \item \textcolor{blue}{矩阵结构：} 在计算基排序下，$\rho_{A,Q}$ 具有块对角形式：
+        \begin{equation}
+        \rho_{A,Q} = \begin{pmatrix}
+        \text{块}_0 & 0 & 0 & 0 \\
+        0 & \text{块}_1 & 0 & 0 \\
+        0 & 0 & \text{块}_2 & 0 \\
+        0 & 0 & 0 & \text{块}_3
+        \end{pmatrix}
+        \end{equation}
+        其中每个块对应一个电荷子空间。
+        
+        \item \textcolor{blue}{物理意义：} \textcolor{red}{投影操作消除了不同电荷子空间之间的量子相干性，只保留每个电荷子空间内部的量子特性。}这使得 $\rho_{A,Q}$ 成为一个 $U(1)$ 对称的状态。
+    \end{itemize}
+    
+    \item \textcolor{blue}{关键区别与联系}
+    \begin{itemize}
+        \item $\rho_A$ 可能破坏 $U(1)$ 对称性，包含不同电荷子空间间的相干项
+        \item $\rho_{A,Q}$ 严格保持 $U(1)$ 对称性，不同电荷子空间间无相干性
+        \item 纠缠不对称性 $\Delta S_A = S(\rho_{A,Q}) - S(\rho_A)$ 量化了对称性破缺的程度：
+        \begin{itemize}
+            \item $\Delta S_A = 0$：状态具有 $U(1)$ 对称性
+            \item $\Delta S_A > 0$：状态破坏 $U(1)$ 对称性
+        \end{itemize}
+    \end{itemize}
+\end{enumerate}
+\textcolor{blue}{两个层面的对称性与量子Mpemba效应机制}
+
+\subsection{对称性的两个层面}
+\begin{enumerate}
+    \item \textcolor{blue}{动力学对称性}：$[H, Q_A] = 0$，保证电荷守恒
+    \begin{itemize}
+        \item \textcolor{red}{核心关系}：算符与哈密顿量对易 $\rightarrow$ 该算符对应的物理量是守恒量，哈密顿量具有该算符生成的对称性（例如 $U(1)$ 对称性）
+        \item \textcolor{blue}{数学表达}：如果 $[H, Q] = 0$，那么 $e^{-iHt} Q e^{iHt} = Q$
+        \item \textcolor{blue}{深层含义}：哈密顿量在对称变换下不变，$H = U^\dagger(\phi) H U(\phi)$
+    \end{itemize}
+
+    \item \textcolor{blue}{状态对称性}：$[\rho, Q_A] = 0$，状态本身具有对称性
+    \begin{itemize}
+        \item \textcolor{blue}{物理意义}：状态本身具有对称性
+        \item \textcolor{blue}{数学表达}：如果 $[\rho, Q] = 0$，那么 $\rho$ 在对称变换下不变，$\rho = U^\dagger(\phi) \rho U(\phi)$
+        \item \textcolor{blue}{量子态特征}：状态是电荷本征态的混合或叠加，但不包含不同电荷间的相干性
+    \end{itemize}
+\end{enumerate}
+
+\subsection{量子Mpemba效应的核心机制}
+\begin{itemize}
+    \item \textcolor{blue}{关键现象}：即使动力学是对称的（$[H, Q_A] = 0$），初始状态 $\rho_A(0)$ 也可能破坏对称性，然后在演化过程中逐渐恢复对称性
+    
+    \item \textcolor{blue}{两种演化路径}：
+    \begin{itemize}
+        \item 对称的动力学 + 不对称的初始状态 $\rightarrow$ 对称性恢复过程
+        \item 对称的动力学 + 对称的初始状态 $\rightarrow$ 始终保持对称性
+    \end{itemize}
+    
+    \item \textcolor{blue}{$U(1)$ 对称性定义}：系统在绕 $z$ 轴的任意旋转下不变
+\end{itemize}
+
+\subsection{强短程耦合区间的QME机制：准粒子介导的弛豫}
+\begin{itemize}
+    \item \textcolor{blue}{理论基础}：在近可积的强短程耦合体系中，QME的出现可以由准粒子图像完美解释
+    
+    \item \textcolor{blue}{准粒子特性}：
+    \begin{itemize}
+        \item 可积系统存在稳定的准粒子，作为系统的集体激发
+        \item 准粒子在整个演化过程中几乎不衰变
+        \item 系统演化时在整个系统中产生纠缠的准粒子对
+    \end{itemize}
+    
+    \item \textcolor{blue}{与纠缠不对称性的关系}：
+    \begin{itemize}
+        \item 只有子系统 $A$ 内部产生的准粒子对才对 $\Delta S_A$ 有贡献
+        \item 准粒子离开子系统 $A$ 后不再贡献于内部的对称性破缺
+    \end{itemize}
+    
+    \item \textcolor{blue}{倾斜角 $\theta$ 的关键作用}：
+    \begin{itemize}
+        \item \textcolor{blue}{大倾斜角 ($\theta = \pi/2$)}：初始态具有更大对称性破缺，优先激发传播速度更快的准粒子模式
+        \item \textcolor{blue}{小倾斜角 ($\theta = \pi/4$)}：对称性破缺较小，激发的准粒子中慢速模式比重更高
+        \item \textcolor{blue}{结果}：大倾斜角态虽然初始不对称性更强，但通过快速准粒子更快地恢复对称性，产生QME交叉现象
+    \end{itemize}
+\end{itemize}
 
 
-\textcolor{blue}{实验细节与关键发现：}
+
+
+\subsection{实验细节与关键发现：}
 \begin{itemize}
     \item \textcolor{blue}{初始态制备：} 倾斜Néel态$|\theta\rangle_N = \bigotimes_{j=1}^{14} R_y(\theta)|s_j\rangle$，其中$|s_j\rangle = |0\rangle$（$j$为奇数）或$|1\rangle$（$j$为偶数）
     \item \textcolor{blue}{对称性破缺程度：} 倾斜角$\theta$控制全局$U(1)$对称性破缺程度：
@@ -225,7 +354,7 @@ This makes it a natural \textcolor{blue}{order parameter} for non-equilibrium dy
     \item \textcolor{blue}{物理机制：} 源于准粒子介导的弛豫，较大倾斜角$\theta$优先激发传播更快的模式，从而加速对称性恢复
 \end{itemize}
 
-\textcolor{blue}{纠缠不对称性定义：}
+\subsection{纠缠不对称性定义：}
 \begin{equation}
 \Delta S_A(t) = S(\rho_{A,Q}(t)) - S(\rho_A(t))
 \end{equation}
@@ -237,58 +366,13 @@ This makes it a natural \textcolor{blue}{order parameter} for non-equilibrium dy
 \end{itemize}
 
 
+\section{QME suppression in intermediate coupling regime}
+Investigate the sensitivity of QME to thermalization processes.
 
 
-\begin{enumerate}
-    \item 数据集、评价指标、基线方法
-    \item 主要实验表格或图（可插入图片）
-\end{enumerate}
 
-\begin{figure}[H]
-    \centering
-    % \includegraphics[width=0.6\textwidth]{figs/result.png}
-    \caption{示例：结果对比图（替换为真实图片）}
-\end{figure}
 
-% ————— 优缺点与评价 —————
-\section{优点与局限}
-\begin{enumerate}
-    \item 优点：列出 3-5 点
-    \item 局限：理论/实践/资源/泛化等问题
-    \item 可信度评估：是否做了消融、显著性检验、多个 seed 等
-\end{enumerate}
 
-% ————— 思路与扩展 —————
-\section{灵感与后续方向}
-\begin{enumerate}
-    \item 可借鉴的技巧与工具
-    \item 可尝试的改进点
-    \item 与自己研究的结合点（短期/中期）
-\end{enumerate}
-
-% ————— 实现笔记 —————
-\section{实现/复现笔记}
-\begin{enumerate}
-    \item 关键超参表
-    \item 训练资源与耗时
-    \item 遇到的问题与解决方案（环境、数据预处理、模型不收敛等）
-\end{enumerate}
-
-% ————— 复现检查表 —————
-\section{复现检查表}
-\begin{enumerate}
-    \item [\(\square\)] 数据集下载与预处理
-    \item [\(\square\)] 代码实现（模型/训练/评估）
-    \item [\(\square\)] 与论文结果对齐
-    \item [\(\square\)] 随机种子与多次实验
-\end{enumerate}
-
-% ————— 重要引用 —————
-\section{参考与延伸阅读}
-% 使用 BibTeX 时在同目录下放 refs.bib 并取消注释下面两行
-% \bibliographystyle{apalike}
-% \bibliography{refs}
-列出文章引用或推荐的延伸阅读（手动列出或使用 BibTeX）。
 
 % ————— 个人笔记与 TODO —————
 \section{个人笔记 }
