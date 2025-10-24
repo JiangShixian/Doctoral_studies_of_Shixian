@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.8)  23 OCT 2025 21:48
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.8)  24 OCT 2025 09:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -859,7 +859,10 @@ File: D:/B_Dr/arXiv-2508.07707v1//Figure1/Figure1.pdf Graphic file (type pdf)
  [3]
 File: D:/B_Dr/arXiv-2508.07707v1//Figure2/Figure2.pdf Graphic file (type pdf)
 <use D:/B_Dr/arXiv-2508.07707v1//Figure2/Figure2.pdf>
- [4] [5] [6] [7] [8] (./1108.aux)
+ [4] [5] [6] [7]
+File: D:/B_Dr/arXiv-2508.07707v1//Figure3/Figure3.pdf Graphic file (type pdf)
+<use D:/B_Dr/arXiv-2508.07707v1//Figure3/Figure3.pdf>
+ [8] [9] [10] (./1108.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
@@ -868,22 +871,16 @@ L3 programming layer <2022/08/05>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-Package rerunfilecheck Warning: File `1108.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `1108.out':
-(rerunfilecheck)             Before: DC4E8EC27412A194A976DFC692FF68FC;2055
-(rerunfilecheck)             After:  807985D97E1ABA83E2C033238E65E625;1587.
+Package rerunfilecheck Info: File `1108.out' has not changed.
+(rerunfilecheck)             Checksum: C2D2B8453D51CCED15615BED09623A67;2346.
  ) 
 Here is how much of TeX's memory you used:
- 27214 strings out of 474773
- 580276 string characters out of 5759510
- 1949842 words of memory out of 5000000
- 48926 multiletter control sequences out of 15000+600000
+ 27237 strings out of 474773
+ 581441 string characters out of 5759510
+ 1948842 words of memory out of 5000000
+ 48947 multiletter control sequences out of 15000+600000
  565606 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  83i,13n,93p,982b,597s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 1108.pdf (8 pages).
+Output written on 1108.pdf (10 pages).

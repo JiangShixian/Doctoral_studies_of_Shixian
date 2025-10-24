@@ -168,9 +168,9 @@ H &= \sum_{i, j=i+1} g_N (\sigma^{+}_{i} \sigma^{-}_{j} + \sigma^{-}_{i} \sigma^
 
 \textcolor{blue}{三种在位势：}
 \begin{itemize}
-    \item 无在位势：$h_i = 0$，所有量子比特调谐到相同的频率，所有量子比特"共振"，能量均匀分布。\textcolor{red}{共振 ($h_i=0$)：完美能量匹配 $->$ 高效的能量传递 $->$ 快速热化}
-    \item 线性在位势：$h_i = \omega_{\text{ref}}/2\pi$，施加位置依赖的线性梯度场。\textcolor{red}{线性 ($h_i$ 线性变化)：系统性失配 → 抑制热化，诱导局域化}
-    \item 非线性在位势：$h_i = \omega_{\text{ref}}/2\pi \cos(2\pi i t)$，每个量子比特施加随机的在位势。\textcolor{red}{非线性 ($h_i$ 随机变化)：随机失配 $->$ 破坏相干性，减缓弛豫}
+    \item 无在位势：$h_i = 0$，所有量子比特调谐到相同的频率，所有量子比特"共振"，能量均匀分布。\textcolor{red}{共振 ($h_i=0$)：完美能量匹配 $\rightarrow$ 高效的能量传递 $\rightarrow$ 快速热化}
+    \item 线性在位势：$h_i = \omega_{\text{ref}}/2\pi$，施加位置依赖的线性梯度场。\textcolor{red}{线性 ($h_i$ 线性变化)：系统性失配 $\rightarrow$ 抑制热化，诱导局域化}
+    \item 无序在位势：$h_i = \omega_{\text{ref}}/2\pi \cos(2\pi i t)$，每个量子比特施加随机的在位势。\textcolor{red}{非线性 ($h_i$ 随机变化)：随机失配 $\rightarrow$ 破坏相干性，减缓弛豫}
 \end{itemize}
 
 
@@ -366,10 +366,101 @@ This makes it a natural \textcolor{blue}{order parameter} for non-equilibrium dy
 \end{itemize}
 
 
-\section{QME suppression in intermediate coupling regime}
-Investigate the sensitivity of QME to thermalization processes.
+\section{QME在中间耦合区间的抑制}
+Investigate the sensitivity of QME to \textcolor{red}{thermalization processes.}
+
+\subsection{辨析可积与热化}
+\begin{enumerate}
+\item 可积$\rightarrow$不可热化
+\item 不可积+无局域化$\rightarrow$通常可以热化（满足本征态热化假设ETH）
+\item 不可积 + 强无序 $\rightarrow$ 可能多体局域化MBL（不热化）（有无穷多个局域守恒量，满足的是面积律，保持初态记忆）（强无序破坏共振条件，能量不匹配抑制跃迁）
+\end{enumerate}
 
 
+\subsection{实验设置与参数}
+\begin{itemize}
+    \item \textcolor{blue}{耦合区间}：中间耦合区间（$r \approx 1$）
+    \item \textcolor{blue}{耦合参数}：
+    \begin{itemize}
+        \item 最近邻耦合：$g_N/2\pi = -2$ MHz
+        \item 长程耦合：$g_L/2\pi \approx -2$ MHz
+        \item 耦合比：$r = |g_N/g_L| \approx 1$
+    \end{itemize}
+    \item \textcolor{blue}{在位势}：共振条件（所有量子比特调至$\omega_{\text{ref}}/2\pi \approx 4.24$ GHz）
+    \item \textcolor{blue}{初始态}：与强短程耦合区间相同的倾斜Néel态（$\theta = \pi/4$和$\pi/2$）
+\end{itemize}
+
+\subsection{关键实验结果}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{Figure3/Figure3.pdf}
+    \caption{
+        \textcolor{blue}{中间耦合区间（$r \approx 1$）的EA动力学。}
+        (a) 共振条件下倾斜Néel态的EA动力学，显示$\theta = \pi/2$的态对称性恢复更慢，导致QME抑制。
+        插图为纠缠熵动力学，显示两个态都趋于Page值，表明系统热化。
+        (b) 引入线性势（$W = 6$ MHz）后EA动力学，显示QME重新出现。
+        插图为平均能级间距比$\langle r \rangle$随$W$的变化，表明系统从热化相向局域化相转变。
+    }
+    \label{fig:intermediate_coupling}
+\end{figure}
+
+\textcolor{blue}{图~\ref{fig:intermediate_coupling}(a)}的主图和插图都是红色线更快，说明对称性恢复的速度与热化速度成正相关。插图的红蓝线刚开始都是呈现线性增长。主图刚开始呈现线性下降。\textcolor{magenta}{EA与EE配合说明，相互验证。}
+
+
+\textcolor{blue}{关于热化：}
+热吉布斯系综是描述系统在热平衡状态下的统计分布。
+
+\textcolor{blue}{关于Page value:}
+根据ETH，非可积量子系统的子系统behaves like一个随机态，纠缠熵趋于一个Page value。
+
+\textcolor{red}{Page value:}一个随机纯态中，子系统的纠缠熵的平均值。
+
+\begin{equation}
+\left\langle S_A\right\rangle_{\mathrm{Page}} \approx \ln (2) \times \min \left(N_A, N_B\right)-\frac{1}{2} \times \frac{2^{\min \left(N_A, N_B\right)}}{2^{\max \left(N_A, N_B\right)}}
+\end{equation}
+
+对于本文的总系统$N=14$，子系统$A=3$，剩余系统$B=11$，$\min \left(N_A, N_B\right) = 3$，$\max \left(N_A, N_B\right) = 11$。
+
+因此，Page value为：
+\begin{equation}
+\left\langle S_A\right\rangle_{\mathrm{Page}} \approx \ln (2) \times 3-\frac{1}{2} \times \frac{2^{3}}{2^{11}} \approx 2.08
+\end{equation}
+
+类似于经典热力学由温度确定的平衡态，量子多体系统由Page value确定纠缠熵。
+
+
+\textcolor{blue}{主要观测现象：}
+\begin{itemize}
+    \item \textcolor{blue}{QME抑制}：在中间耦合区间，更大的初始对称性破缺（$\theta = \pi/2$）导致\textcolor{blue}{更慢}的对称性恢复
+    \item \textcolor{blue}{无动力学交叉}：EA曲线单调衰减，没有出现强短程耦合区间中的交叉现象
+    \item \textcolor{blue}{热化特征}：纠缠熵线性增长并趋于Page值，表明系统达到热平衡
+\end{itemize}
+
+\subsection{物理机制解释}
+\begin{itemize}
+    \item \textcolor{blue}{热化主导}：中间耦合强度破坏了系统的可积性，使动力学由热化过程主导
+    \item \textcolor{blue}{对称性恢复与热化的关联}：对称性恢复速率与热化速率正相关
+    \item \textcolor{blue}{倾斜角效应}：较小倾斜角（$\theta = \pi/4$）的态热化更快，因此对称性恢复也更快
+    \item \textcolor{blue}{与强短程耦合的对比}：在可积性主导的强短程耦合中，准粒子机制导致反常动力学；在热化主导的中间耦合中，系统遵循正常的热化行为
+\end{itemize}
+
+\subsection{理论验证}
+通过计算纠缠熵动力学验证热化假设：
+\begin{itemize}
+    \item 两个初始态的EE都增长并接近Page值
+    \item EE的演化与EA动力学密切相关
+    \item 较小倾斜角的态表现出更快的EE增长，对应更快的热化速率
+\end{itemize}
+
+\subsection{重要意义}
+\begin{itemize}
+    \item 首次实验展示了通过调节耦合强度可以实现QME的\textcolor{blue}{可控抑制}
+    \item 阐明了对称性恢复与热化过程之间的\textcolor{blue}{内在联系}
+    \item 为理解量子多体系统中非平衡动力学提供了重要见解
+    \item 展示了超导量子处理器在研究多体物理中的强大能力
+\end{itemize}
+
+\textcolor{blue}{核心结论：}在中间耦合区间，热化过程主导系统动力学，导致QME被抑制。这表明QME的出现强烈依赖于系统的可积性和热化性质，为理解量子多体非平衡动力学提供了重要线索。
 
 
 
