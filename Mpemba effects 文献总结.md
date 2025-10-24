@@ -56,12 +56,11 @@
 
 0930
 
-<a href="zotero://note/5196661/YK7T7S94/" rel="noopener noreferrer nofollow" zhref="zotero://note/5196661/YK7T7S94/" ztype="znotelink" class="internal-link">这个定义好像比entanglement好像更一般，不需要对称性，看看第一个用matrix@蒋仕贤 @陈烨非</a>
+<a href="zotero://note/5196661/YK7T7S94/" rel="noopener noreferrer nofollow" zhref="zotero://note/5196661/YK7T7S94/" ztype="znotelink" class="internal-link">这个定义好像比entanglement好像更一般，不需要对称性，看看第一个用matrix
 
 1007
 
 <a href="zotero://note/5196661/CJFGXGY3/" rel="noopener noreferrer nofollow" zhref="zotero://note/5196661/CJFGXGY3/" ztype="znotelink" class="internal-link">Mpemba Effects in Quantum Complexity</a>
 
-1008：跟这个文章一块读读@蒋仕贤 @陈烨非 
-
+1008：跟这个文章一块读读
 <a href="zotero://note/5196661/LV48TVMS/" rel="noopener noreferrer nofollow" zhref="zotero://note/5196661/LV48TVMS/" ztype="znotelink" class="internal-link">Symmetry restoration and quantum Mpemba effect in symmetric random circuits</a>
