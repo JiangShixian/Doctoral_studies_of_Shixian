@@ -13,6 +13,8 @@
 \usepackage{fancyhdr}
 \usepackage{tcolorbox}
 
+
+
 % 字体设置
 \setmainfont{TeX Gyre Termes}
 \setCJKmainfont{SimSun}
@@ -348,7 +350,7 @@ Z脉冲的精确控制对于实现高保真度的量子态制备和保持超导�
 
 \subsubsection{有效耦合的物理来源}
 
-我们的分析揭示，在我们的实验系统中，相邻量子比特之间的有效耦合强度主要来自三个贡献：
+我们的分析揭示，在我们的实验系统中，相邻量子比特之间的有效耦合强度主要来自\textcolor{magenta}{三个贡献}：
 \begin{enumerate}
     \item 通过总线谐振器介导的耦合
     \item 通过耦合器介导的耦合
@@ -368,8 +370,8 @@ Z脉冲的精确控制对于实现高保真度的量子态制备和保持超导�
         该图展示了在中间耦合区间下，所有14个量子比特之间的耦合强度分布。
         颜色深浅和线条粗细表示耦合强度$g/2\pi$的大小，单位为MHz。
         在此配置下，最近邻耦合强度设置为$g_N/2\pi = -2$ MHz，长程耦合强度调谐至约$-2$ MHz。
-        耦合矩阵呈现出较为均匀的分布特征，反映了系统在中间耦合区间的全连接特性，
-        此时系统行为由热化过程主导，量子Mpemba效应被抑制。
+        \textcolor{magenta}{耦合矩阵呈现出较为均匀的分布特征，反映了系统在中间耦合区间的全连接特性，
+        此时系统行为由热化过程主导，量子Mpemba效应被抑制。}
     }
     \label{fig:coupling_matrix_intermediate}
 \end{figure}
@@ -382,8 +384,8 @@ Z脉冲的精确控制对于实现高保真度的量子态制备和保持超导�
         该图展示了在强短程耦合区间下，量子比特间的耦合强度分布。
         在此配置中，中心总线谐振器调谐至其最高频率，导致平均长程耦合强度约为$0.5$ MHz，
         而最近邻耦合强度通过耦合器设置为$g_N/2\pi = -5$ MHz。
-        耦合矩阵显示出明显的最近邻主导特征，长程相互作用被显著抑制，
-        此时系统近似映射到可积的一维XX自旋链，为准粒子机制和量子Mpemba效应的出现提供了条件。
+        \textcolor{magenta}{耦合矩阵显示出明显的最近邻主导特征，长程相互作用被显著抑制，
+        此时系统近似映射到可积的一维XX自旋链，为准粒子机制和量子Mpemba效应的出现提供了条件。}
     }
     \label{fig:coupling_matrix_strong_short_range}
 \end{figure}
@@ -505,14 +507,11 @@ Renyi-2 EA为：
     \centering
     \includegraphics[width=0.7\textwidth]{SupFigS9.pdf}
     \caption{
-        \textbf{线性势下遍历性破缺的指标。}
-        (a) 在$S_z=0$子空间中，平均能级间距比$\langle r\rangle$随线性势强度$W$的变化关系。
-        当$W$增大时，$\langle r\rangle$从约0.53下降至0.39，表明系统从遍历相（Wigner-Dyson统计）向局域化相（Poisson统计）转变。
-        (b) 在$W=6$ MHz和$W=12$ MHz线性势下，系统不平衡度的动力学演化。
-        不平衡度表现出围绕非零值的持续振荡，为系统的非遍历行为提供了补充证据。
-        这些结果共同证实了线性势能够有效抑制系统的热化过程，从而为量子Mpemba效应的重现创造了条件。
+    \textbf{Supplementary Fig. S9. 不同度量与系统尺寸下的 EEA 动力学。}
+    \textbf{a,} 在 $N = 14$ 的自旋链中，子系尺寸 $N_a = 3$ 时分别使用冯·诺依曼熵和 Rényi-2 熵计算的 EA 动力学对比。尽管绝对值略有差异，两种度量捕捉到的动力学特征完全一致。
+    \textbf{b,} 固定 $N_a = 4$ 时 EA 动力学（冯·诺依曼熵）的系统尺寸依赖性。随着 $N$ 增大，子系对称性恢复加速并趋于完全，而特征动力学交叉行为保持不变。
     }
-    \label{fig:ergodicity_breaking_indicators}
+    \label{fig:S9}
 \end{figure}
 
 \begin{figure}[H]
@@ -529,9 +528,12 @@ Renyi-2 EA为：
     \label{fig:quasidistribution_dynamics}
 \end{figure}
 
-为了可视化对称性恢复动力学，我们使用准分布函数$Q(\theta,\phi)=\langle\theta,\phi|\rho_A|\theta,\phi\rangle$，其中相干自旋态定义为$|\theta,\phi\rangle=e^{-i\phi\sum_i\sigma_z^{(i)}/2}e^{-i\theta\sum_i\sigma_y^{(i)}/2}|00\cdots 0\rangle$。最初（$t=0$），分布沿着特定方向尖锐峰值。随着系统演化，方位角（$\phi$方向）分布逐渐变得均匀，标志着$U(1)$旋转对称性的恢复。与$\theta=\pi/4$相比，$\theta=\pi/2$的分布更快平坦化直接体现了QME。在$t=T_{\text{EA}}/2$时，分布分岔为两个对称峰，揭示了涌现的$Z_2$对称性和部分$U(1)$对称性恢复。到$t=T_{\text{EA}}$时，分布复兴到与初始态对称的配置，展示了关系$T_S=2T_{\text{EA}}$。至关重要的是，这些$Q(\theta,\phi)$动力学提供了在可积LMG模型中对称性恢复的完整可视化——这个过程不能通过传统的准粒子传播来解释。
+为了可视化对称性恢复动力学，我们使用准分布函数$Q(\theta,\phi)=\langle\theta,\phi|\rho_A|\theta,\phi\rangle$，其中\textcolor{magenta}{相干自旋态}定义为$|\theta,\phi\rangle=e^{-i\phi\sum_i\sigma_z^{(i)}/2}e^{-i\theta\sum_i\sigma_y^{(i)}/2}|00\cdots 0\rangle$。最初（$t=0$），分布沿着特定方向尖锐峰值。随着系统演化，方位角（$\phi$方向）分布逐渐变得均匀，标志着$U(1)$旋转对称性的恢复。与$\theta=\pi/4$相比，$\theta=\pi/2$的分布更快平坦化直接体现了QME。在$t=T_{\text{EA}}/2$时，分布分岔为两个对称峰，揭示了涌现的$Z_2$对称性和部分$U(1)$对称性恢复。到$t=T_{\text{EA}}$时，分布复兴到与初始态对称的配置，展示了关系$T_S=2T_{\text{EA}}$。至关重要的是，这些$Q(\theta,\phi)$动力学提供了在可积LMG模型中对称性恢复的完整可视化——这个过程不能通过传统的准粒子传播来解释。
 
 \subsection{在位势对EA动力学的影响}
+
+
+
 
 我们的工作进一步研究了在位势与QME之间的关系，检查了线性势对倾斜Néel态的影响以及无序对$r\approx 1$区间中倾斜铁磁态的影响。
 
@@ -579,7 +581,7 @@ Renyi-2 EA为：
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{SupFigS13.pdf}
+    \includegraphics[width=0.7\textwidth]{SupFigS13.pdf}
     \caption{
         \textbf{倾斜铁磁态在不同无序强度下的纠缠不对称性动力学。}
         该图展示了在中间耦合区间（$r \approx 1$）下，倾斜铁磁态在不同无序强度$\delta_z$时的EA动力学行为。
@@ -629,7 +631,7 @@ d\tilde{\rho} = -i[H,\tilde{\rho}]dt - \kappa[X,[X,\tilde{\rho}]]dt
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{SupFigS14.pdf}
+    \includegraphics[width=0.95\textwidth]{SupFigS14.pdf}
     \caption{
         \textbf{使用量子轨迹方法验证倾斜铁磁态的EA动力学。}
         (a) 对于小系统（$N=10$），随着轨迹计数$M$增加，结果接近从Lindblad方程的精确解获得的结果。
@@ -638,6 +640,144 @@ d\tilde{\rho} = -i[H,\tilde{\rho}]dt - \kappa[X,[X,\tilde{\rho}]]dt
     }
     \label{fig:quantum_trajectory_verification}
 \end{figure}
+
+
+\section{主方程、Lindblad、蒙特卡洛与量子轨迹的概念辨析}
+
+\subsection{详细概念辨析}
+
+\begin{table}[H]
+\centering
+\caption{主方程、Lindblad、蒙特卡洛与量子轨迹的概念辨析}
+\begin{tabular}{|p{0.22\textwidth}|p{0.2\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|}
+\hline
+\textbf{概念} & \textbf{定义层次} & \textbf{核心思想} & \textbf{在论文中的应用} \\
+\hline
+\textbf{主方程} & \textbf{理论框架} & 描述系统\textbf{密度矩阵}随时间演化的微分方程 & 开放量子系统动力学的基本描述框架 \\
+\hline
+\textbf{Lindblad} & \textbf{具体形式} & 主方程的\textbf{特定形式}，保证完全正定性和迹守恒 & 描述包含退相干的系统演化 \\
+\hline
+\textbf{蒙特卡洛} & \textbf{算法类型} & 通过\textbf{随机采样}来估计复杂问题的数值方法 & 量子轨迹方法的数学基础 \\
+\hline
+\textbf{量子轨迹} & \textbf{具体算法} & 通过模拟多条\textbf{随机状态演化路径}来重构密度矩阵 & 论文中用于高效模拟多体系统动力学的实际算法 \\
+\hline
+\end{tabular}
+\label{tab:concept_comparison}
+\end{table}
+
+\subsection{深入理论解释}
+
+\subsubsection{主方程 - 理论框架}
+
+主方程是描述开放量子系统动力学的一般理论框架：
+\[
+\frac{d\rho}{dt} = \mathcal{L}[\rho]
+\]
+其中：
+\begin{itemize}
+    \item \textbf{定位}：理论框架
+    \item \textbf{目标}：描述密度矩阵 $\rho$ 的演化
+    \item \textbf{特点}：可以是各种形式，不一定是完全正定的
+\end{itemize}
+
+\subsubsection{Lindblad 主方程 - 具体实现}
+
+Lindblad 主方程是主方程的一种特定形式：
+\[
+\frac{d\rho}{dt} = -i[H,\rho] + \sum_k \left(L_k\rho L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \rho\}\right)
+\]
+其中：
+\begin{itemize}
+    \item $H$：系统哈密顿量
+    \item $L_k$：Lindblad 算符（跳变算符）
+    \item \textbf{要求}：保证演化完全正定、迹守恒
+    \item \textbf{优势}：物理上合理的耗散描述
+\end{itemize}
+
+\subsubsection{量子轨迹方法 - 计算算法}
+
+\textcolor{magenta}{量子轨迹方法通过随机演化状态向量来近似密度矩阵演化：}
+\[
+|\psi(t)\rangle \xrightarrow{\text{随机演化}} |\psi(t+dt)\rangle
+\]
+最终密度矩阵为：
+\[
+\tilde{\rho}(t) = \frac{1}{M}\sum_{i=1}^{M} |\psi_i(t)\rangle\langle\psi_i(t)|
+\]
+其中：
+\begin{itemize}
+    \item \textbf{定位}：数值算法
+    \item \textbf{原理}：\textcolor{magenta}{用大量随机轨迹的平均来近似密度矩阵演化}
+    \item \textbf{优势}：内存效率高，适合大系统
+\end{itemize}
+
+\subsubsection{蒙特卡洛 - 数学基础}
+
+\begin{itemize}
+    \item \textbf{定位}：算法思想
+    \item \textbf{原理}：\textcolor{magenta}{用随机性解决确定性问题的统计方法}
+    \item \textbf{在量子轨迹中}：随机选择量子跳跃的时间和类型
+\end{itemize}
+
+\subsection{在量子Mpemba效应研究中的应用}
+
+\subsubsection{计算挑战与解决方案}
+
+在论文的 Supplementary Note 4 中，面临的主要计算挑战是：
+
+\textbf{问题}：直接求解 Lindblad 方程的内存需求为 $\mathcal{O}(2^{4N})$，对于 $N=14$ 的量子比特系统变得不可行。
+
+\textbf{解决方案}：采用量子轨迹方法
+\begin{itemize}
+    \item 内存需求：$\mathcal{O}(2^{N})$ 状态向量
+    \item 计算代价：$M/dt$ 时间步长
+    \item 实现方式：$\tilde{\rho}(t) = \frac{1}{M}\sum_{i=1}^{M} |\psi_i(t)\rangle\langle\psi_i(t)|$
+\end{itemize}
+
+% \subsubsection{计算流程}
+% \begin{figure}[H]
+%     \centering
+%     \begin{tikzpicture}
+%         \node (lindblad) [rectangle, draw] {Lindblad主方程\\（理论模型）};
+%         \node (trajectory) [rectangle, draw, below of=lindblad] {量子轨迹方法\\（求解算法）};
+%         \node (montecarlo) [rectangle, draw, below of=trajectory] {蒙特卡洛采样\\（数学基础）};
+%         \node (results) [rectangle, draw, below of=montecarlo] {数值结果\\（EA动力学）};
+        
+%         \draw[->] (lindblad) -- (trajectory);
+%         \draw[->] (trajectory) -- (montecarlo);
+%         \draw[->] (montecarlo) -- (results);
+%     \end{tikzpicture}
+%     \caption{量子轨迹方法计算流程图}
+%     \label{fig:computation_flow}
+% \end{figure}
+
+\subsection{重要理论区分}
+
+\subsubsection{理论与算法的区分}
+
+\begin{itemize}
+    \item \textbf{Lindblad}：描述系统\textbf{应该怎样演化}（物理理论）
+    \item \textbf{量子轨迹}：\textbf{如何计算}这种演化（数值算法）
+\end{itemize}
+
+\subsubsection{密度矩阵与状态向量的区分}
+
+\begin{itemize}
+    \item \textbf{主方程}：直接处理密度矩阵 $\rho$（$N$量子比特：$2^N \times 2^N$ 矩阵）
+    \item \textbf{量子轨迹}：处理状态向量 $|\psi\rangle$（$N$量子比特：$2^N$ 向量）
+\end{itemize}
+
+\subsection{总结}
+
+\textbf{核心关系总结}：
+\begin{itemize}
+    \item \textbf{主方程}是``我们要解什么''（理论框架）
+    \item \textbf{Lindblad}是``方程的特定写法''（具体形式）  
+    \item \textbf{蒙特卡洛}是``用随机抽样的思想''（算法基础）
+    \item \textbf{量子轨迹}是``具体怎么算的算法''（数值实现）
+\end{itemize}
+
+在量子Mpemba效应的研究中，使用\textbf{量子轨迹方法}（基于蒙特卡洛思想）来数值求解\textbf{Lindblad主方程}，从而避免了直接求解主方程时巨大的内存需求，使得模拟14量子比特系统的纠缠不对称性(EA)动力学成为可能。这种方法的成功应用是论文能够系统研究多体非平衡量子动力学的重要技术基础。
 
 
 
