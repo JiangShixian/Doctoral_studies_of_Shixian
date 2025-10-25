@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.8)  24 OCT 2025 21:02
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.8)  25 OCT 2025 08:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -650,8 +650,7 @@ Package fontspec Info: Font family 'SimSun(0)' created for font 'SimSun' with
 (fontspec)             <->"SimSun/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-
-No file Sup_note.aux.
+ (./Sup_note.aux)
 \openout1 = `Sup_note.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
@@ -664,7 +663,7 @@ LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 30.
-(d:/APP/texlive/2024/texmf-dist/tex/latex/base/ts1cmr.fd
+ (d:/APP/texlive/2024/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 30.
@@ -773,11 +772,10 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring ON on input line 30.
+(./Sup_note.out) (./Sup_note.out)
 \@outlinefile=\write4
 \openout4 = `Sup_note.out'.
 
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
 
 
 LaTeX Font Warning: Font shape `TU/SimSun(0)/b/n' undefined
@@ -790,12 +788,12 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
  (d:/APP/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+) [1
+
+]
 File: D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS1.pdf Graphic file (type pdf)
 <use D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS1.pdf>
- [1
-
-] [2] [3]
+ [2] [3]
 File: D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS2.pdf Graphic file (type pdf)
 <use D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS2.pdf>
  [4
@@ -811,32 +809,46 @@ File: D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS4.pdf Grap
 ]
 File: D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS5.pdf Graphic file (type pdf)
 <use D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS5.pdf>
- [8] [9]
+ [8]
+File: D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS6.pdf Graphic file (type pdf)
+<use D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS6.pdf>
+ [9]
 File: D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS7.pdf Graphic file (type pdf)
 <use D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS7.pdf>
  [10]
+File: D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS8.pdf Graphic file (type pdf)
+<use D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS8.pdf>
+ [11]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 390.
+(hyperref)                removing `math shift' on input line 420.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 390.
+(hyperref)                removing `math shift' on input line 420.
 
-[11]
-Overfull \hbox (17.15007pt too wide) detected at line 465
+[12]
+Overfull \hbox (17.15007pt too wide) detected at line 495
 \OT1/cmr/m/n/10.95 ^^A\OML/cmm/m/it/10.95 S[] \OT1/cmr/m/n/10.95 = [] [] = [] [] = [] []
  []
 
-File: D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS8.pdf Graphic file (type pdf)
-<use D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS8.pdf>
-[12] [13]
+[13]
 File: D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS9.pdf Graphic file (type pdf)
 <use D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS9.pdf>
- [14]
 File: D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS10.pdf Graphic file (type pdf)
 <use D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS10.pdf>
- [15] (./Sup_note.aux)
+ [14]
+File: D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS11.pdf Graphic file (type pdf)
+<use D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS11.pdf>
+ [15]
+File: D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS12.pdf Graphic file (type pdf)
+<use D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS12.pdf>
+File: D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS13.pdf Graphic file (type pdf)
+<use D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS13.pdf>
+ [16] [17]
+File: D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS14.pdf Graphic file (type pdf)
+<use D:/B_Dr/2025-11-8文献汇报/arXiv-2508.07707v1/suppFig/SupFigS14.pdf>
+ [18] (./Sup_note.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
@@ -848,22 +860,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-
-Package rerunfilecheck Warning: File `Sup_note.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Sup_note.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  F6BA8764B2FDB81CB9F46977A8ED2453;3503.
+Package rerunfilecheck Info: File `Sup_note.out' has not changed.
+(rerunfilecheck)             Checksum: 845949930A7C1F0F3D78C18AD16D631B;3944.
  ) 
 Here is how much of TeX's memory you used:
- 26355 strings out of 474773
- 566254 string characters out of 5759510
- 1957842 words of memory out of 5000000
- 48092 multiletter control sequences out of 15000+600000
+ 26468 strings out of 474773
+ 571877 string characters out of 5759510
+ 1963842 words of memory out of 5000000
+ 48194 multiletter control sequences out of 15000+600000
  569134 words of font info for 108 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 83i,13n,93p,593b,469s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 83i,13n,93p,593b,689s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Sup_note.pdf (15 pages).
+Output written on Sup_note.pdf (18 pages).
